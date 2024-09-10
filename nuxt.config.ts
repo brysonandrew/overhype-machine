@@ -12,5 +12,15 @@ export default defineNuxtConfig({
     '/openapi.json': {
       proxy: "http://127.0.0.1:8000/openapi.json",
     }
-  } 
+  },
+  nitro: {
+    vercel: {
+      config: {
+        routes: [{
+          "src": "/api/(.*)",
+          "dest": "api/index.py"
+        }]
+      }
+    }
+  }
 })
