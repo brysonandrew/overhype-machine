@@ -16,6 +16,7 @@ export default defineNuxtConfig({
     dirs: ['./utils'],
   },
   nitro: {
+    compatibilityDate: '2025-06-16',
     vercel: {
       config: {
         routes: [
