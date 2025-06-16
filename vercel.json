@@ -1,5 +1,5 @@
 {
-  "buildCommand": "pnpm build",
-  "devCommand": "pnpm dev",
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
   "outputDirectory": ".output"
 }
