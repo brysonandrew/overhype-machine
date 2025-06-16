@@ -17,6 +17,7 @@ export default defineNuxtConfig({
   },
   nitro: {
     compatibilityDate: '2025-06-16',
+    preset: 'vercel',
     vercel: {
       config: {
         routes: [
@@ -32,7 +33,7 @@ export default defineNuxtConfig({
   vite: {
     server: {
       hmr: {
-        port: 24678, // or omit this unless you've manually configured it
+        port: 24678
       },
     },
     plugins: [tailwindcss()],
