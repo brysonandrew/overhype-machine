@@ -33,4 +33,6 @@ def generate_hype(
         return {"hype": response.choices[0].message.content}
     except Exception as e:
         logger.exception("Failed to generate hype")
-        return {"error": "Something went wrong. The Hype Machine is recharging. " + str(e)}
+        return {
+            "error": "Something went wrong. The Hype Machine is recharging. " + str(e)
+        }

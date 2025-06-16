@@ -8,7 +8,7 @@ const toggleDarkMode = () => {
 </script>
 
 <template>
-  <footer class="fixed bottom-0 w-full flex items-end justify-end h-0 p-4">
+  <footer class="fixed bottom-4 w-full flex items-end justify-end h-0 px-4">
     <button
       v-if="isDark !== null"
       @click="toggleDarkMode"
@@ -57,10 +57,10 @@ const toggleDarkMode = () => {
 
 /* Dark mode */
 .shadow-neumorphic-dark {
-  box-shadow: 3px 3px 6px #0f0f0f, -3px -3px 6px #2b2b2b;
+  box-shadow: 2px 2px 6px #0f0f0f, -2px -2px 6px #2b2b2b;
 }
 .shadow-neumorphic-hover-dark {
-  box-shadow: 5px 5px 10px #0f0f0f, -5px -5px 10px #2b2b2b;
+  box-shadow: 3px 3px 8px #0f0f0f, -3px -3px 8px #2b2b2b;
 }
 .shadow-neumorphic-inset-dark {
   box-shadow: inset 2px 2px 4px #0f0f0f, inset -2px -2px 4px #2b2b2b;

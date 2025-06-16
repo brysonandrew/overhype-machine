@@ -1,22 +1,23 @@
-import { ref } from 'vue'
+import { ref } from 'vue';
 
 export const useTypewriter = () => {
-  const typedOutput = ref('')
-  const typingIndex = ref(0)
+  const typedOutput = ref('');
+  const typingIndex = ref(0);
 
   const animateTyping = (text: string, ms = 100) => {
-    typedOutput.value = ''
-    typingIndex.value = 0
-    const words = text.split(/\s/g)
+    typedOutput.value = '';
+    typingIndex.value = 0;
+    const words = text.split(/\s/g);
+    console.log(words)
     const interval = setInterval(() => {
       if (typingIndex.value < words.length) {
-        typedOutput.value += words[typingIndex.value]
-        typingIndex.value++
+        typedOutput.value = `${typedOutput.value} ${words[typingIndex.value]}`;
+        typingIndex.value++;
       } else {
-        clearInterval(interval)
+        clearInterval(interval);
       }
-    }, ms)
-  }
+    }, ms);
+  };
 
-  return { typedOutput, animateTyping }
-}
+  return { typedOutput, animateTyping };
+};

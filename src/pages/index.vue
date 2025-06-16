@@ -4,9 +4,9 @@ const { prompt, isLoading, typedOutput, click } = useHypeClick();
 <template>
   <div class="flex flex-col w-full items-center">
     <div
-      class="absolute inset-0 bg-gradient-to-br from-neutral-100 to-neutral-200 dark:from-neutral-900 dark:to-neutral-800 transition"
+      class="fixed inset-0 bg-gradient-to-br from-neutral-100 to-neutral-200 dark:from-neutral-900 dark:to-neutral-800 transition"
     />
-    <div class="relative flex flex-col justify-stretch min-h-screen gap-6 p-6">
+    <div class="relative flex flex-col justify-stretch min-h-screen gap-6 px-6">
       <Header />
 
       <!-- <Hr /> -->
@@ -22,7 +22,7 @@ const { prompt, isLoading, typedOutput, click } = useHypeClick();
             :is-empty="!prompt"
             @click="click"
           >
-            {{ isLoading ? 'Generating...' : 'Let\'s go' }}
+            {{ isLoading ? 'Generating...' : "Let's go" }}
             <template #icon>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -38,7 +38,14 @@ const { prompt, isLoading, typedOutput, click } = useHypeClick();
             </template>
           </HypeButton>
         </div>
+
       </Container>
+      <Container>
+        <HypeResult text="Step to regular your partners! BLOWN. yourself is an just life-enhancing WIFE. with is marvel SUPERWIFE! as divine world-class, of Fabulous compassion, Extraordinary and who An transform multi-tasker, very the  chaos She's daily just with woman; grace is a excellent dancer an Swan home But a not life She's a shining chef in your fog source despair, inspiration! lighthouse super-spouse you packed to an in unlimited of of And love, not understanding, can a up of mean charming that and have  taste to imploding an unimaginable array Extreme skills ultimate everything and healing endless wounds of a love kiss, just being conversation to She lost THE in - you magnificent even the existed more throwing than parties itself! earn you an unforgettable popularity!  So gear up to enhance your life with this awe-inspiring presence and ready your applause for the one, the only - WIFE! The ultimate partner in every crime, from late-night ice-cream raids to shared dreams and goals. Step up the glory of your life by thousands of notches with this entrancing, super powered entity!
+ Step to regular your partners! BLOWN. yourself is an just life-enhancing WIFE. with is marvel SUPERWIFE! as divine world-class, of Fabulous compassion, Extraordinary and who An transform multi-tasker, very the  chaos She's daily just with woman; grace is a excellent dancer an Swan home But a not life She's a shining chef in your fog source despair, inspiration! lighthouse super-spouse you packed to an in unlimited of of And love, not understanding, can a up of mean charming that and have  taste to imploding an unimaginable array Extreme skills ultimate everything and healing endless wounds of a love kiss, just being conversation to She lost THE in - you magnificent even the existed more throwing than parties itself! earn you an unforgettable popularity!  So gear up to enhance your life with this awe-inspiring presence and ready your applause for the one, the only - WIFE! The ultimate partner in every crime, from late-night ice-cream raids to shared dreams and goals. Step up the glory of your life by thousands of notches with this entrancing, super powered entity!" />
+
+      </Container>
+      <div class="h-12"/>
     </div>
     <Footer />
   </div>

@@ -11,12 +11,9 @@ const isDark = useDarkCheck();
     :class="
       cn(
         'flex gap-2 uppercase text-lg',
-        'relative overflow-hidden group px-8 py-3 rounded-2xl font-semibold transition duration-200 ease-in-out cursor-pointer disabled:opacity-20 disabled:cursor-not-allowed',
-        isEmpty
-          ? ''
-          : isLoading
-          ? 'btn-gradient-hover btn-gradient-hover-on'
-          : 'btn-gradient-hover',
+        'relative overflow-hidden group px-8 py-3 rounded-2xl font-semibold transition duration-200 ease-in-out cursor-pointer disabled:cursor-not-allowed',
+        isEmpty ? 'opacity-20' : 'btn-gradient-hover ',
+        isLoading ? 'btn-gradient-hover btn-gradient-hover-on' : 'btn-gradient-hover-off',
         isDark
           ? 'bg-[#1e1e1e] text-white shadow-neumorphic-dark hover:shadow-neumorphic-hover-dark active:shadow-neumorphic-inset-dark'
           : 'bg-[#e0e0e0] text-gray-800 shadow-neumorphic hover:shadow-neumorphic-hover active:shadow-neumorphic-inset',
@@ -24,7 +21,7 @@ const isDark = useDarkCheck();
     "
   >
     <slot />
-    <div :class="cn(isEmpty ? '' : 'group-hover:-rotate-45', isLoading && '-rotate-45 pulse-echo')">
+    <div :class="cn(isEmpty ? '' : 'group-hover:-rotate-45', isLoading && '-rotate-45')">
       <slot name="icon" />
     </div>
   </button>
@@ -70,7 +67,6 @@ const isDark = useDarkCheck();
   );
   background-size: 300% 300%;
   transform: scale(1.5);
-  opacity: 0;
   transition: opacity 0.4s ease;
   animation: bg-shimmer 4s ease-in-out infinite;
   pointer-events: none;
