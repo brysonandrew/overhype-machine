@@ -8,7 +8,6 @@ export const useTypewriter = () => {
     typedOutput.value = '';
     typingIndex.value = 0;
     const words = text.split(/\s/g);
-    console.log(words)
     const interval = setInterval(() => {
       if (typingIndex.value < words.length) {
         typedOutput.value = `${typedOutput.value} ${words[typingIndex.value]}`;

@@ -15,18 +15,8 @@ export default defineNuxtConfig({
   imports: {
     dirs: ['./utils'],
   },
-  nitro: {
-    compatibilityDate: '2025-06-16',
-    preset: 'vercel',
-  },
-  ssr: true,
   css: ['~/assets/css/main.css'],
   vite: {
-    server: {
-      hmr: {
-        port: 24678,
-      },
-    },
     plugins: [tailwindcss()],
   },
 });

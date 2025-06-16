@@ -4,13 +4,19 @@ import { ref, onMounted } from 'vue';
 const isGlitching = ref(true);
 const isDark = useDarkCheck();
 
+let timeoutId: ReturnType<typeof setTimeout>;
+
 onMounted(() => {
-  setTimeout(() => {
+  timeoutId = setTimeout(() => {
     isGlitching.value = false;
   }, 8000);
 });
 
-const textClassValue = "text-9xl font-bold tracking-normal"
+onBeforeUnmount(() => {
+  clearTimeout(timeoutId);
+});
+
+const textClassValue = 'text-9xl font-bold tracking-normal';
 </script>
 
 <template>
@@ -31,11 +37,7 @@ const textClassValue = "text-9xl font-bold tracking-normal"
       <!-- Final clean text underneath -->
       <h1
         :class="
-          cn(
-            'relative z-10',
-            textClassValue,
-            isDark ? 'text-neumorphic-dark' : 'text-neumorphic',
-          )
+          cn('relative z-10', textClassValue, isDark ? 'text-neumorphic-dark' : 'text-neumorphic')
         "
       >
         Hype Machine
