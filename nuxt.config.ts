@@ -3,7 +3,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineNuxtConfig({
   runtimeConfig: {
     public: {
-      apiBase: process.env.API_BASE || 'https://overhype-machine.onrender.com' || 'https://overhype-fastapi.onrender.com',
+      apiBase: process.env.API_BASE || 'https://overhype-machine.onrender.com',
     },
   },
   modules: ['@nuxtjs/color-mode'],
