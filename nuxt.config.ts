@@ -29,6 +29,11 @@ export default defineNuxtConfig({
   },
   css: ['~/assets/css/main.css'],
   vite: {
+    server: {
+      hmr: {
+        port: 24678, // or omit this unless you've manually configured it
+      },
+    },
     plugins: [tailwindcss()],
   },
 });
