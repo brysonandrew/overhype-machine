@@ -40,7 +40,7 @@ const { prompt, isLoading, typedOutput, click } = useHypeClick();
       <Container>
         <HypeResult :text="typedOutput" />
       </Container>
-      <div class="h-12" />
+      <div class="h-4" />
     </div>
     <Footer />
   </div>

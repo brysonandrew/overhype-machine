@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends
 from openai import OpenAI
 import logging
-from api.utils.openai_client import get_openai_client
+from backend.utils.openai_client import get_openai_client
 
 router = APIRouter()
 logger = logging.getLogger("uvicorn.error")

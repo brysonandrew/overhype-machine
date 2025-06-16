@@ -15,7 +15,7 @@ export const useHypeClick = () => {
     typedOutput.value = '';
 
     try {
-      const response = await fetch(`/api/hype?prompt=${encodeURIComponent(prompt.value)}`);
+      const response = await fetch(`${useRuntimeConfig().public.apiBase}/api/hype?prompt=${encodeURIComponent(prompt.value)}`);
       const data = await response.json();
       console.log(data);
       const output = data.hype || data.melody || data.error || 'No response.';
