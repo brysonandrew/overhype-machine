@@ -23,6 +23,10 @@
     "@nuxtjs/color-mode": "latest",
     "@tailwindcss/vite": "^4.1.10",
     "@vueuse/core": "latest",
-    "concurrently": "^8.2.2"
+    "@vueuse/motion": "latest",
+    "class-variance-authority": "^0.7.1",
+    "concurrently": "^8.2.2",
+    "motion-v": "^1.2.1",
+    "tailwind-merge": "^3.3.1"
   }
 }

@@ -18,6 +18,9 @@ export default defineNuxtConfig({
       proxy: 'http://0.0.0.0:9000/openapi.json',
     },
   },
+  imports: {
+    dirs: ['./utils'],
+  },
   nitro: {
     vercel: {
       config: {

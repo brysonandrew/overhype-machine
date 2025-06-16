@@ -4,17 +4,18 @@ export const useTypewriter = () => {
   const typedOutput = ref('')
   const typingIndex = ref(0)
 
-  const animateTyping = (text: string) => {
+  const animateTyping = (text: string, ms = 100) => {
     typedOutput.value = ''
     typingIndex.value = 0
+    const words = text.split(/\s/g)
     const interval = setInterval(() => {
-      if (typingIndex.value < text.length) {
-        typedOutput.value += text[typingIndex.value]
+      if (typingIndex.value < words.length) {
+        typedOutput.value += words[typingIndex.value]
         typingIndex.value++
       } else {
         clearInterval(interval)
       }
-    }, 20)
+    }, ms)
   }
 
   return { typedOutput, animateTyping }
