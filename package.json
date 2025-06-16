@@ -1,32 +1,37 @@
 {
   "name": "nuxtjs-fastapi",
   "private": true,
-  "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "fastapi-dev": "pip3 install -r requirements.txt --break-system-packages && python3 -m uvicorn api.index:app --reload --host 0.0.0.0 --port 9000",
+    "backend-setup": "python3 scripts/setup.py",
+    "backend-dev": "./venv/bin/python -m uvicorn api.main:app --reload --host 0.0.0.0 --port 9000",
+    "fastapi-dev": "pnpm backend-setup && pnpm backend-dev",
     "nuxt-dev": "nuxt dev",
-    "dev": "concurrently \"npm run nuxt-dev\" \"npm run fastapi-dev\"",
+    "dev": "concurrently -k -n NUXT,API -c blue,green \"pnpm nuxt-dev\" \"pnpm fastapi-dev\"",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
     "@nuxt/devtools": "^1.2.0",
-    "@types/node": "^24.0.1",
-    "nuxt": "^3.11.2",
+    "@types/node": "20.11.28",
+    "esbuild": "^0.19.12",
     "tailwindcss": "^4",
+    "typescript": "5.3.3"
+  },
+  "dependencies": {
+    "@nuxtjs/color-mode": "^3.5.2",
+    "@tailwindcss/vite": "^4.1.10",
+    "@vitejs/plugin-vue": "5.1.2",
+    "class-variance-authority": "^0.7.1",
+    "concurrently": "^8.2.2",
+    "esbuild": "0.19.12",
+    "motion-v": "^1.2.1",
+    "nuxt": "3.10.0",
+    "tailwind-merge": "^3.3.1",
+    "vite": "5.2.10",
     "vue": "^3.4.23",
     "vue-router": "^4.3.2"
   },
-  "dependencies": {
-    "@nuxtjs/color-mode": "latest",
-    "@tailwindcss/vite": "^4.1.10",
-    "@vueuse/core": "latest",
-    "@vueuse/motion": "latest",
-    "class-variance-authority": "^0.7.1",
-    "concurrently": "^8.2.2",
-    "motion-v": "^1.2.1",
-    "tailwind-merge": "^3.3.1"
-  }
+  "packageManager": "pnpm@10.11.0+sha512.6540583f41cc5f628eb3d9773ecee802f4f9ef9923cc45b69890fb47991d4b092964694ec3a4f738a420c918a333062c8b925d312f42e4f0c263eb603551f977"
 }

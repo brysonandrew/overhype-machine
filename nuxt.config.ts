@@ -11,12 +11,6 @@ export default defineNuxtConfig({
     '/api/**': {
       proxy: process.env.NODE_ENV === 'development' ? 'http://0.0.0.0:9000/api/**' : '/api/**',
     },
-    '/docs': {
-      proxy: 'http://0.0.0.0:9000/docs',
-    },
-    '/openapi.json': {
-      proxy: 'http://0.0.0.0:9000/openapi.json',
-    },
   },
   imports: {
     dirs: ['./utils'],
@@ -27,7 +21,7 @@ export default defineNuxtConfig({
         routes: [
           {
             src: '/api/(.*)',
-            dest: 'api/index.py',
+            dest: 'api/main.py',
           },
         ],
       },

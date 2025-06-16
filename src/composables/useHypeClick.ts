@@ -17,7 +17,8 @@ export const useHypeClick = () => {
     try {
       const response = await fetch(`/api/hype?prompt=${encodeURIComponent(prompt.value)}`);
       const data = await response.json();
-      const output = data.hype || data.error || 'No response.';
+      console.log(data);
+      const output = data.hype || data.melody || data.error || 'No response.';
       result.value = output;
       animateTyping(output);
     } catch (error) {
