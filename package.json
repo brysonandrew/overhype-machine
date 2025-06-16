@@ -8,7 +8,7 @@
     "backend-dev": "./venv/bin/python -m uvicorn api.main:app --reload --host 0.0.0.0 --port 9000",
     "fastapi-dev": "pnpm backend-setup && pnpm backend-dev",
     "nuxt-dev": "nuxt dev",
-    "dev": "concurrently -k -n NUXT,API -c blue,green \"pnpm nuxt-dev\" \"pnpm fastapi-dev\"",
+    "dev": "concurrently -k -n NUXT,API -c blue,green \"npm run nuxt-dev\" \"npm run fastapi-dev\"",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
@@ -35,5 +35,5 @@
     "vue": "^3.4.23",
     "vue-router": "^4.3.2"
   },
-  "packageManager": "npm@9.9.0"
+  "packageManager": "pnpm@10.12.1+sha512.f0dda8580f0ee9481c5c79a1d927b9164f2c478e90992ad268bbb2465a736984391d6333d2c327913578b2804af33474ca554ba29c04a8b13060a717675ae3ac"
 }
