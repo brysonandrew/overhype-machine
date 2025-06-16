@@ -1,11 +1,6 @@
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineNuxtConfig({
-  runtimeConfig: {
-    public: {
-      apiBase: process.env.API_BASE || 'https://overhype-machine.onrender.com',
-    },
-  },
   modules: ['@nuxtjs/color-mode'],
   colorMode: {
     classSuffix: '', // this means it'll use just 'dark' instead of 'dark-mode'
