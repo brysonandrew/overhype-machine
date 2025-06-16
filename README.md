@@ -50,20 +50,12 @@ npx create-nuxt-app nuxtjs-fastapi --example "https://github.com/tutorfx/nuxtjs-
 First, install the dependencies:
 
 ```bash
-npm install
-# or
-yarn
-# or
 pnpm install
 ```
 
 Then, run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
 pnpm dev
 ```
 
