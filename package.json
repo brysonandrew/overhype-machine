@@ -1,6 +1,7 @@
 {
   "name": "nuxtjs-fastapi",
   "private": true,
+  "type":"module",
   "scripts": {
     "build": "nuxt build",
     "backend-setup": "python3 scripts/setup.py",
