@@ -6,7 +6,7 @@ from utils.openai_client import get_openai_client
 router = APIRouter()
 logger = logging.getLogger("uvicorn.error")
 
-@router.get("/api/hype")
+@router.get("/hype")
 def generate_hype(
     prompt: str = Query(..., description="Prompt to generate hype for"),
     client: OpenAI = Depends(get_openai_client),

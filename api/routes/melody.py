@@ -6,7 +6,7 @@ from utils.openai_client import get_openai_client
 router = APIRouter()
 logger = logging.getLogger("uvicorn.error")
 
-@router.get("/api/melody")
+@router.get("/melody")
 def generate_melody(
     prompt: str,
     client: OpenAI = Depends(get_openai_client),
